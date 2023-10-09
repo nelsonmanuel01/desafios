@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+/* fonte da internet) @import url(https://fonts.googleapis.com/css2?family=Benas+Neue&display=swap) */
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
+
+@font-face {
+    font-family:Dancing ; /* nome da fonte*/
+    src:url(/fonte/Dancing.ttf) format("ttf");
+    font-weight: normal;
+}
+
+:root {
+    --cor0:#ffeb06;
+    --cor1: #ff75b3;
+    --cor3:#efede0; 
+    --cor4: #26292e;
+    --cor5: #ef6824;
+    --cor6: #737373fb;
+    --colo7: #211f20;
+    --colo8: #383838;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:  'Inclusive Sans', sans-serif;
+}
+* { 
+    margin: 0px;
+    padding: 0px;
+}
+main p {
+    margin: 15px 0px ;
+    text-align: justify;
+    text-indent: 25px;
+    font-size: 1em;
+    line-height: 1.5em; /* altura entre linhas de um paragrafo*/
+}
+main strong {
+    color: var(--colo7);
+    font-weight: bold;
+   
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #0f1427;
+    padding: 2px 4px;
+
+}
+main a:hover {
+    text-decoration: underline;
+    color: #a54515;
+}
+body {
+    background-color:var(--cor5);
+    font-family: var(--fonte-padrao);
+    
+}
+a.externo::after /*depois dele*/ {
+    content: '\00A0\1f517'; /*todo link externo ou da class externo depois dele terá uma âncora  entre a figurinha e o link tera um espaço 00A0*/
+}
+header {
+    background-image: linear-gradient(to bottom, #26292e, #29746d5b );
+    background-color:var(--cor4);
+    font-family: var(--fonte-destaque);
+    min-height: 100px;
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 10px;
+    /* font-weight: normal; serve para tirar o negrito do h1*/
+    font-size: 3em;
+    text-shadow: 0px 2px 1px #ef6824a9; /* sombra em texto*/
+}
+header > p {
+    color: var(--cor3);
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 480px;
+    margin: auto;
+    
+}
+nav {
+    background-color:#a54515;
+    color: var(--colo7);
+    padding: 10px;
+    box-shadow: 0px 2px 10px rgb(17, 17, 17);
+}
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+
+}
+nav > a:hover {
+    background-color: var(--cor5);
+    color: var(--colo7);
+}
+main {
+    padding: 25px;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: 0px 60px 0px 60px;
+    margin-bottom: 30px;
+    background-color: var(--cor6);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.493);
+    border-bottom-left-radius: 10px; /* borda de baixo a esquerda ficará aredondado com 10px*/
+    border-bottom-right-radius: 10px; /* borda de baixo a direita ficará aredondado com 10px*/
+    
+}
+main h1 {
+    font-weight: normal;
+    font-family: var(--fonte-padrao);
+    color: white;
+}
+main h2 {
+    font-family: var(--fonte-destaque);
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1.2em;
+    background-image: linear-gradient(to right, #26292e, transparent );
+    text-indent: 5px;
+}
+main img {
+    width: 100%;
+}
+main img.pequena {
+    max-width: 300px; /* para esta imagem, quando ambrimos o site no telefone ou em telas maiores não vai ficando a diminuir e aumentado ele tera o mesmo tamanho em digerentes telas */
+   display: block;
+   margin: auto;
+}
+h2 {
+    color: #001e88;
+}
+
+h3 {
+    color: #001e88;
+    
+}
+div.video {
+background-color: var(--cor5); /* fundo por trás do video*/
+margin: 0px -25px 30px -25px; /*margem a direita ,esquerda, emcima, em baixo do video os valores negativos fará com que o nosso fundo se espanda para fora*/
+padding: 20px; /* em cima e em baixo*/
+padding-bottom: 55%; /*distancia de baixo do video se mexer neste valor diminuirá a borda preta interna do vidio em relação ao fundo*/
+position: relative;
+}
+div.video > iframe {
+position: absolute;
+top: 5%; /*distancia de sima até o nosso video*/
+left: 5%; /*distancia a esquerda*/
+width: 90%;/*largura do video por porcentagem*/
+height: 90%;/*altura*/
+}
+aside {
+    background-color:#0f1427;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.582) ;
+}
+aside > h3 {
+    background-color:var(--cor5);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /* essa margem fará com q o background cresça para fora por ser negatica ou seja em vez de deixar uma margem para dentro deixará para fora*/ 
+    border-radius: 10px 10px 0px 0px; /* encima na direita e encima na esquerda não tem borda em baixo*/
+    
+}
+aside > ul {
+    list-style-type: "\2714\00A0\00A0"; /*SERVE PARA dar um estilo os icones da lista, \00A0\ serve para dar um espaço entre o icone e o item da lista */
+    list-style-position: inside; /* isso fará com qui a decoração da lista (aqueles pontinos) estarão dentro da caixa*/
+    columns: 2; /* vai dividir a minha lista em duas colunas */
+}
+footer {
+    background-color:#0f1427;
+    color:white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+footer a:hover {
+text-decoration: underline;
+color:var(--cor5);
+}
